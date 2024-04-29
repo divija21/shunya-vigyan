@@ -1,0 +1,51 @@
+.header {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .highlight {
+    color: #ff6600; /* orange */
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .card.smaller {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .card.smaller h2 {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .red { background-color: #ff4d4d; }
+  .blue { background-color: #3385ff; }
+  .green { background-color: #33cc33; }
+  .purple { background-color: #9933ff; }
+  .orange { background-color: #ff9933; }
+  .yellow { background-color: #ffff66; }
+  .pink { background-color: #ff66b3; }
+  .turquoise { background-color: #00cccc; }
+  .indigo { background-color: #6666ff; }
+  .lime { background-color: #99ff33; }
+  .cyan { background-color: #00e6e6; }
+  .teal { background-color: #33cc99; }
+  .lavender { background-color: #cc99ff; }
+  .magenta { background-color: #ff99cc; }
+  

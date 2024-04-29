@@ -1,0 +1,68 @@
+/* ProblemList.css */
+
+/* Styles for the header */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles for the problem list container */
+.problem-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles for each individual problem item */
+.problem-item {
+    position: relative; /* Add this to enable positioning for the button */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    width: 80%;
+    max-width: 600px;
+    transition: background-color 0.3s ease;
+    display: flex; /* Add this to enable flexbox layout */
+    flex-direction: column; /* Arrange children vertically */
+}
+
+/* Hover effect */
+.problem-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styles for the problem title */
+.problem-item h2 {
+    margin-bottom: 5px;
+}
+
+/* Styles for the problem description */
+.problem-item p {
+    margin-bottom: 10px;
+}
+
+/* Styles for the difficulty paragraph */
+.problem-item p:last-child {
+    font-style: italic;
+}
+
+/* Solve Problem button */
+.solve-button {
+    margin-top: auto; /* Push the button to the bottom */
+    align-self: flex-end; /* Align the button to the end of the container */
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 450px; /* Adjust the margin-left as needed */
+}
+
+/* Darker background color on hover */
+.solve-button:hover {
+    background-color: #0056b3;
+}

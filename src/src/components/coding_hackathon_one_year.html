@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कोड Hackathon</title>
+<style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+    .container { width: 80%; margin: auto; overflow: hidden; }
+    header { background: #333; color: #fff; padding-top: 30px; min-height: 70px; border-bottom: #0779e4 3px solid; }
+    header h1 { text-align: center; margin: 0; }
+    #main-content { padding: 20px; }
+    .content-section { margin-bottom: 20px; }
+    .instructor { margin-bottom: 10px; }
+    .instructor img { width: 100px; height: 100px; border-radius: 50%; }
+    .instructor p { display: inline-block; vertical-align: top; margin-left: 15px; }
+    .countdown { background-color: #f4f4f4; padding: 10px; text-align: center; margin-bottom: 20px; }
+</style>
+<script>
+    // Simple Countdown Timer JavaScript Code
+    document.addEventListener("DOMContentLoaded", function() {
+        var eventDate = new Date("YYYY-MM-DD").getTime(); // Set event date
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = eventDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Event Started";
+            } else {
+                document.getElementById("countdown").innerHTML = days + " Days Until Event Starts";
+            }
+        }, 1000);
+    });
+</script>
+</head>
+<body>
+<header>
+    <h1>कोड Hackathon - एक वर्षीय कोडिंग महोत्सव</h1>
+</header>
+
+<div class="container" id="main-content">
+    <div class="content-section">
+        <h2>Introduction</h2>
+        <p>Welcome to the कोड Hackathon, a year-long coding event where you'll learn, compete, and grow. Covering programming languages, data structures and algorithms, interview preparation, LinkedIn profile and portfolio building, this event is a golden opportunity for budding developers.</p>
+    </div>
+    
+    <div class="content-section">
+        <h2>What You'll Learn</h2>
+        <ul>
+            <li>Programming Languages</li>
+            <li>Data Structures and Algorithms</li>
+            <li>Interview Scheduling</li>
+            <li>LinkedIn Profile Building</li>
+            <li>Portfolio Building</li>
+        </ul>
+    </div>
+    
+    <div class="content-section">
+        <h2>Rewards</h2>
+        <p>Top 10 students will be offered a Rs 3 lakh/yearly package job. All participants will receive certificates with rank.</p>
+    </div>
+    
+    <div class="content-section">
+        <h2>Instructors</h2>
+        <div class="instructor">
+            <img src="instructor_placeholder.jpg" alt="Instructor Name">
+            <p>Instructor from Google with extensive experience in software development and mentorship.</p>
+        </div>
+        <!-- Add more instructors as needed -->
+    </div>
+    
+    <div class="content-section">
+        <h2>Features of कोड Platform</h2>
+        <p>Our platform offers instant doubt solving through collaborative coding, live classes 2-3 times a week by instructors from leading tech companies like Google, Walmart, and Amazon.</p>
+        <p>Explore more about our features through this video:</p>
+        <iframe width="560" height="315" src="youtube_video_placeholder" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    <div id="countdown" class="countdown"></div>
+</div>
+
+</body>
+</html>

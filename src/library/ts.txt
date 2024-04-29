@@ -1,0 +1,102 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const BookingDetails = () => {
+  const [selectedSeats, setSelectedSeats] = useState([]);
+  // const [paymentUrl, setPaymentUrl] = useState('');
+  const [loading2, setLoading2] = useState(false);
+
+  const payload = {
+    amount: 300,
+    currency: 'INR',
+    firebase_uuid: 'jhdsjhdsjh'
+  };
+
+  const handlePayment = (e)=>{
+    e.preventDefault();
+    setLoading2(true);
+    axios.post('https://20.244.86.231:8000/api/v1/initiate_payment/', payload).then(res => {  
+      console.log('Payment initiated successfully:', res.data.pay_page_url);
+
+    setTimeout(() => {
+        setLoading2(false);
+    }, 1500);
+    })
+    .catch(error => {
+        setLoading2(false)
+        console.error(error);
+    });   
+}
+
+  // const initiatePayment = async () => {
+  //   try {
+  //     const response = await axios.post('https://20.244.86.231:8000/api/v1/initiate_payment/', payload);
+  //     console.log('Payment initiated successfully:', response.data.pay_page_url);
+  //     setPaymentUrl(response.data.pay_page_url);
+  //   } catch (error) {
+  //     console.error('Error initiating payment:', error);
+  //     // Handle error here
+  //   }
+  // };
+
+  // const handlePayNow = () => {
+  //   window.location.href = paymentUrl;
+  // };
+
+  const loadDataFromLocalStorage = () => {
+    const bookedData = localStorage.getItem('Booked');
+    if (bookedData) {
+      setSelectedSeats(JSON.parse(bookedData));
+    }
+  };
+
+  useEffect(() => {
+    loadDataFromLocalStorage();
+  }, []);
+
+  return (
+    <div className="bg-white shadow-md rounded px-4 py-6">
+      <h2 className="text-xl font-bold mb-4">Booking Details</h2>
+      <ul className="list-disc pl-4 mb-4">
+        {selectedSeats.map((seatId) => (
+          <li key={seatId}>Seat {seatId}</li>
+        ))}
+      </ul>
+      <button
+        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-[40vw]"
+        onClick={handlePayment}
+      >
+        Book Now
+      </button>
+    
+      }
+    </div>
+  );
+};
+
+export default BookingDetails;
+
+
+
+ <div className="bg-white border-1 overflow-hidden">
+          <div className="px-6 py-4 flex justify-between">
+            <div>
+              <h2 className="text-sm font-semibold mb-2 text-gray-800">{selectedLibrary.name}</h2>
+              <p className="text-gray-600 mb-4 text-sm">{`${selectedLibrary.address}, ${selectedLibrary.city}, ${selectedLibrary.pin_code}, ${selectedLibrary.state}`}</p>
+            </div>
+            <div className="flex flex-wrap">
+              {Object.entries(selectedLibrary.slots_timings_and_rate).map(([slot, details]) => (
+                <button
+                  key={slot}
+                  className={`text-[green] text-sm border-solid border-1 border-black py-2 px-4 rounded mr-2 mb-2 h-9 ${
+                    details.timing === 'Closed' ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
+                  disabled={details.timing === 'Closed'}
+                  onClick={() => handleButtonClick(slot)}
+                >
+                  {slot}: {details.start_time} - {details.end_time}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
